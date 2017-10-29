@@ -8,5 +8,10 @@ the Emacs minibuffer.
 
 ```
 jbuilder build @plugin
-emacs -L ./_build/default -batch --eval "(progn (require 'ecaml-hello) (ecaml-hello))"
+```
+
+## Running
+
+```
+emacs -L ./_build/default --batch --eval "(progn (require 'ecaml-hello) (ecaml-hello))"
 ```
