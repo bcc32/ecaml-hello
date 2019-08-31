@@ -1,0 +1,12 @@
+(executable
+ (name plugin)
+ (public_name ecaml-hello)
+ (libraries ecaml)
+ (preprocess (pps ppx_jane)))
+
+(rule
+ (copy plugin.exe ecaml-hello.so))
+
+(alias
+ (name plugin)
+ (deps ecaml-hello.so))

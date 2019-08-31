@@ -8,11 +8,11 @@ doc: "https://github.com/bcc32/ecaml-hello/blob/master/README.md"
 tags: ["ecaml" "emacs" "opam"]
 dev-repo: "https://github.com/bcc32/ecaml-hello"
 build: [
-  ["jbuilder" "subst"] {pinned}
-  ["jbuilder" "build" "-p" name "-j" jobs]
+  ["dune" "subst"] {pinned}
+  ["dune" "build" "-p" name "-j" jobs]
 ]
-build-test: ["jbuilder" "runtest" "-p" name "-j" jobs]
+build-test: ["dune" "runtest" "-p" name "-j" jobs]
 depends: [
-  "jbuilder" {build}
+  "dune" {build & >= "1.0"}
   "ecaml" {build & <= "v0.9.0"}
 ]
