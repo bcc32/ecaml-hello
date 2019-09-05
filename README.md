@@ -10,8 +10,16 @@ the Emacs minibuffer.
 dune build
 ```
 
-## Running
+## Running in batch mode
 
 ```
 emacs -L ./_build/default --batch --eval "(progn (require 'ecaml-hello) (ecaml-hello))"
+```
+
+## Running interactively
+
+```
+emacs -L ./_build/default -l ecaml-hello
+
+# In Emacs, press M-x ecaml-hello RET to run the command.
 ```
