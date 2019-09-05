@@ -1,17 +1,18 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Aaron L. Zeng <me@bcc32.com>"
 authors: "Aaron L. Zeng <me@bcc32.com>"
+synopsis: "A simple hello world ecaml plugin"
 homepage: "https://github.com/bcc32/ecaml-hello"
 bug-reports: "https://github.com/bcc32/ecaml-hello/issues"
 license: "MIT"
 doc: "https://github.com/bcc32/ecaml-hello/blob/master/README.md"
 tags: ["ecaml" "emacs" "opam"]
-dev-repo: "https://github.com/bcc32/ecaml-hello"
+dev-repo: "git+https://github.com/bcc32/ecaml-hello"
 build: [
   ["dune" "subst"] {pinned}
   ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
 ]
-build-test: ["dune" "runtest" "-p" name "-j" jobs]
 depends: [
   "dune" {build & >= "1.0"}
   "ecaml" {>= "v0.12.0" & < "v0.13.0"}
