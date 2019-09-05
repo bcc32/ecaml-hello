@@ -1,12 +1,11 @@
-open Ecaml.Std
+open Ecaml
 
 let () =
-  Emacs.Function.defun ~args:[] (Emacs.Symbol.intern "ecaml-hello")
-    (function
-      | [||] ->
-        Emacs.message "Hello from OCaml";
-        Emacs.Value.nil
-      | _ -> invalid_arg "wrong arity")
+  defun (Symbol.intern "ecaml-hello") [%here] (Returns Value.Type.unit)
+ (let open Defun.Let_syntax in
+  let%map_open () = return () in
+  message "Hello from OCaml";
+  ())
 ;;
 
-let () = Emacs.provide (Emacs.Symbol.intern "ecaml-hello")
+let () = provide (Symbol.intern "ecaml-hello")

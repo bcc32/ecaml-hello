@@ -7,7 +7,7 @@ the Emacs minibuffer.
 ## Compiling
 
 ```
-jbuilder build @plugin
+dune build ecaml-hello.so
 ```
 
 ## Running
