@@ -8,3 +8,7 @@
 
 (rule
  (copy plugin.so ecaml-hello.so))
+
+(alias
+ (name install)
+ (deps ecaml-hello.so))
