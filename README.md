@@ -4,6 +4,8 @@
 simply defines a function `(ecaml-hello)` that prints a hello world message to
 the Emacs minibuffer.
 
+See also the official hello world [example][ecaml-example].
+
 ## Compiling
 
 ```
@@ -23,3 +25,5 @@ emacs -L ./_build/default -l ecaml-hello
 
 # In Emacs, press M-x ecaml-hello RET to run the command.
 ```
+
+[ecaml-example]: https://github.com/janestreet/ecaml/blob/master/example/hello_world.ml
